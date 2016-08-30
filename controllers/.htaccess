@@ -1,0 +1,37 @@
+#esto es un comentario
+
+RewriteEngine On
+
+RewriteRule ^$  controllers/login.php
+
+RewriteRule ^html$  html/
+
+RewriteRule ^logo2$  html/images/logo2.png
+
+RewriteRule ^estilos$  html/css/estilos.css
+
+RewriteRule ^login$ controllers/login.php
+
+RewriteRule ^logout$ controllers/logout.php
+
+RewriteRule ^lista-artistas$ controllers/listaartistas.php
+
+RewriteRule ^lista-discos$ controllers/listadiscos.php
+
+RewriteRule ^lista-ventas$ controllers/listaventas.php
+
+RewriteRule ^alta-artistas$ controllers/altaartistas.php
+
+RewriteRule ^alta-discos$ controllers/altadiscos.php
+
+RewriteRule ^alta-compras$ controllers/altacompras.php
+
+RewriteRule ^alta-ventas$ controllers/altaventas.php
+
+RewriteRule ^modifica-disco-([0-9]+)$ controllers/modificadiscos.php?id=$1
+
+RewriteRule ^modifica-venta-([0-9]+)$ controllers/modificaventas.php?id=$1
+
+RewriteRule ^elimina-disco-([0-9]+)$ controllers/eliminadiscos.php?id=$1
+
+RewriteRule ^elimina-venta-([0-9]+)$ controllers/eliminaventas.php?id=$1

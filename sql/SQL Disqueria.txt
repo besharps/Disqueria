@@ -1,0 +1,246 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 21-11-2014 a las 14:38:25
+-- Versión del servidor: 5.0.41
+-- Versión de PHP: 5.2.8
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `disqueria`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `artistas`
+-- 
+
+CREATE TABLE IF NOT EXISTS `artistas` (
+  `id_artista` int(11) unsigned NOT NULL auto_increment,
+  `nombre` varchar(50) collate latin1_general_ci NOT NULL,
+  `id_genero` int(11) unsigned NOT NULL,
+  PRIMARY KEY  (`id_artista`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=35 ;
+
+-- 
+-- Volcar la base de datos para la tabla `artistas`
+-- 
+
+INSERT INTO `artistas` (`id_artista`, `nombre`, `id_genero`) VALUES 
+(1, 'Julio Sosa', 3),
+(2, 'Soledad', 1),
+(3, 'Chaqueño Palavecino', 1),
+(4, 'Los Nocheros', 1),
+(5, 'Abel Pintos', 1),
+(6, 'Luciano Pereyra', 1),
+(7, 'Los Auténticos Decadentes', 6),
+(8, 'Vicentico', 6),
+(9, 'Los Fabulosos Cadillacs', 6),
+(10, 'Bersuit Vergarabat', 6),
+(11, 'Tan Biónica', 4),
+(12, 'Airbag', 4),
+(13, 'La Renga', 4),
+(14, 'Metallica', 4),
+(15, 'U2', 4),
+(16, 'Coldplay', 6),
+(17, 'The Cure', 4),
+(18, 'The Rolling Stones', 4),
+(19, 'The Beatles', 4),
+(20, 'Los Cafres', 16),
+(21, 'DreadMar-I', 16),
+(22, 'Ciro y Los Persas', 4),
+(23, 'Jorge Rojas', 1),
+(24, 'Los Tekis', 1),
+(25, 'Raly Barrionuevo', 1),
+(26, 'Peteco Carabajal', 1),
+(27, 'Dúo Coplanacu', 1),
+(28, 'Dúo OrellanaLucca', 1),
+(29, 'Guillermo Fernández', 3),
+(30, 'Raúl Lavié', 3),
+(31, 'Los Piojos', 4),
+(32, 'Attaque 77', 4),
+(33, 'Carlos Gardel', 3),
+(34, 'Sandro', 17);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `compras`
+-- 
+
+CREATE TABLE IF NOT EXISTS `compras` (
+  `id_compra` int(10) unsigned NOT NULL auto_increment,
+  `id_usuario` int(10) unsigned NOT NULL,
+  `fecha` date NOT NULL,
+  `id_disco` int(10) unsigned NOT NULL,
+  `cantidad` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`id_compra`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=9 ;
+
+-- 
+-- Volcar la base de datos para la tabla `compras`
+-- 
+
+INSERT INTO `compras` (`id_compra`, `id_usuario`, `fecha`, `id_disco`, `cantidad`) VALUES 
+(1, 0, '2014-11-11', 3, 20),
+(2, 0, '2014-11-11', 1, 30),
+(3, 0, '2014-11-11', 6, 50),
+(4, 0, '2014-11-11', 7, 50),
+(5, 0, '2014-11-12', 10, 20),
+(6, 0, '2014-11-12', 2, 20),
+(7, 0, '2014-11-12', 4, 20),
+(8, 0, '2014-11-12', 5, 20);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `discos`
+-- 
+
+CREATE TABLE IF NOT EXISTS `discos` (
+  `id_disco` int(10) unsigned NOT NULL auto_increment,
+  `id_artista` int(10) unsigned NOT NULL,
+  `titulo` varchar(50) collate latin1_general_ci NOT NULL,
+  `fecha_lanzamiento` date NOT NULL,
+  `lista_canciones` varchar(500) collate latin1_general_ci NOT NULL,
+  `alta` date NOT NULL,
+  `precio` float NOT NULL,
+  PRIMARY KEY  (`id_disco`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=15 ;
+
+-- 
+-- Volcar la base de datos para la tabla `discos`
+-- 
+
+INSERT INTO `discos` (`id_disco`, `id_artista`, `titulo`, `fecha_lanzamiento`, `lista_canciones`, `alta`, `precio`) VALUES 
+(1, 4, 'Crónica', '2014-10-23', '1 - Sin principio ni final\r\n2 - Clarito sia escuchao\r\n3 - Flores negras\r\n4 - Para tu ausencia\r\n5 - Hijos del sol\r\n6 - Rocío de abril\r\n7 - Quédate\r\n8 - Ya no vendrás\r\n9 - La taba\r\n10 - Tu naturaleza\r\n11 - Dime cómo hacer\r\n12 - Crónica de las cosas que pasan en la ciudad cuando no me respondes', '2014-10-26', 50),
+(2, 4, 'Nocheros', '2014-10-24', '1 - Por culpa del diablo\r\n2 - Boquita de luna\r\n3 - Sueño de amor\r\n4 - Tómame\r\n5 - Escríbeme una carta\r\n6 - La Tatín Villagra\r\n7 - Canción del adiós\r\n8 - Flor temprana\r\n9 - Pájaro errante\r\n10 - Roja boca\r\n11 - Déjame que me vaya\r\n12 - A cada instante (Nostalgia)\r\n13 - Río Testigo\r\n14 - Penas y alegrías del amor', '2014-10-26', 50),
+(3, 5, 'Reflejo real', '2014-10-22', '1 - Quien pudiera\r\n2 - Anclada en mis manos\r\n3 - El beso\r\n4 - A veces pasa\r\n5 - Buenos amores\r\n6 - Eternidad\r\n7 - Ofrezco\r\n8 - Huracán\r\n9 - Mi error\r\n10 - Cada segundo sin vos\r\n11 - Lucero\r\n12 - Para saber\r\n13 - Reflejo real\r\n14 - Todos iguales', '2014-10-24', 60),
+(4, 4, 'Gen', '2014-01-02', 'Zamba para no morir', '2014-11-10', 50),
+(5, 4, 'Señal de amor', '2004-10-05', '1 - Señal de amor\r\n2 - Guitarra de medianoche\r\n3 - Los 70 en un sueño\r\n4 - No saber de ti\r\n5 - Fiesta en la cueva\r\n6 - Pretenciosa\r\n7 - Tu y yo\r\n8 - Vuela una lágrima\r\n9 - El amor de mi vida\r\n10 - Donde muere el mar\r\n11 - Cuando me dices que no\r\n12 - Resistiendo', '2014-11-10', 50),
+(6, 1, 'Mis 30 Mejores Canciones Vol 1', '2009-08-01', '1 - Uno\r\n2 - Cambalache', '2014-11-11', 50),
+(7, 1, 'Mis 30 Mejores Canciones Vol 2', '2009-08-01', '1 - Uno\r\n2 - Cambalache', '2014-11-11', 50),
+(8, 23, 'La Vida', '2006-09-01', '1 - Vuelvo\r\n2 - Mía\r\n3 - Locura', '2014-11-11', 50),
+(9, 5, 'Sueño Dorado', '2014-11-10', 'Sueño dorado', '2014-11-12', 60),
+(10, 4, 'Tiempo de Amor', '1996-04-05', 'Tiempo de amor', '2014-11-12', 40);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `generos`
+-- 
+
+CREATE TABLE IF NOT EXISTS `generos` (
+  `id_genero` int(11) unsigned NOT NULL auto_increment,
+  `descripcion` varchar(50) collate latin1_general_ci NOT NULL,
+  PRIMARY KEY  (`id_genero`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=19 ;
+
+-- 
+-- Volcar la base de datos para la tabla `generos`
+-- 
+
+INSERT INTO `generos` (`id_genero`, `descripcion`) VALUES 
+(1, 'Folklore'),
+(2, 'Jazz'),
+(3, 'Tango'),
+(4, 'Rock'),
+(5, 'Blues'),
+(6, 'Pop'),
+(7, 'Orquestal'),
+(8, 'Coral'),
+(9, 'Tropical'),
+(10, 'Música étnica'),
+(11, 'Disco'),
+(12, 'Soul'),
+(13, 'Gospel'),
+(14, 'Vocal lírico'),
+(15, 'Instrumental'),
+(16, 'Ska'),
+(17, 'Melódico'),
+(18, 'Heavy-Metal');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `stock`
+-- 
+
+CREATE TABLE IF NOT EXISTS `stock` (
+  `id_stock` int(10) unsigned NOT NULL auto_increment,
+  `id_disco` int(10) unsigned NOT NULL,
+  `stock` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`id_stock`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=12 ;
+
+-- 
+-- Volcar la base de datos para la tabla `stock`
+-- 
+
+INSERT INTO `stock` (`id_stock`, `id_disco`, `stock`) VALUES 
+(1, 1, 28),
+(2, 2, 20),
+(3, 3, 18),
+(4, 4, 20),
+(5, 5, 19),
+(6, 6, 49),
+(7, 7, 49),
+(8, 8, 0),
+(9, 9, 0),
+(10, 10, 20),
+(11, 13, 0);
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `usuarios`
+-- 
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id_usuario` int(10) unsigned NOT NULL auto_increment,
+  `usuario` varchar(50) collate latin1_general_ci NOT NULL,
+  `contrasena` varchar(50) collate latin1_general_ci NOT NULL,
+  `apellido` varchar(50) collate latin1_general_ci NOT NULL,
+  `nombre` varchar(50) collate latin1_general_ci NOT NULL,
+  PRIMARY KEY  (`id_usuario`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=3 ;
+
+-- 
+-- Volcar la base de datos para la tabla `usuarios`
+-- 
+
+INSERT INTO `usuarios` (`id_usuario`, `usuario`, `contrasena`, `apellido`, `nombre`) VALUES 
+(1, 'rjoviedo', '29708021', 'Oviedo', 'Ramiro Javier'),
+(2, 'mgullino', '123456', 'Gullino', 'Mauro');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `ventas`
+-- 
+
+CREATE TABLE IF NOT EXISTS `ventas` (
+  `id_venta` int(10) unsigned NOT NULL auto_increment,
+  `nro_factura` int(10) unsigned NOT NULL,
+  `id_usuario` int(10) unsigned NOT NULL,
+  `fecha` date NOT NULL,
+  `id_disco` int(10) unsigned NOT NULL,
+  `cantidad` int(10) unsigned NOT NULL,
+  PRIMARY KEY  (`id_venta`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=9 ;
+
+-- 
+-- Volcar la base de datos para la tabla `ventas`
+-- 
+
+INSERT INTO `ventas` (`id_venta`, `nro_factura`, `id_usuario`, `fecha`, `id_disco`, `cantidad`) VALUES 
+(1, 1, 1, '2014-11-11', 3, 3),
+(2, 1, 1, '2014-11-11', 3, 1),
+(3, 1234, 1, '2014-11-12', 6, 1),
+(4, 1234, 1, '2014-11-12', 7, 1),
+(5, 1235, 1, '2014-11-12', 1, 1),
+(7, 1256, 1, '2014-11-21', 5, 1);

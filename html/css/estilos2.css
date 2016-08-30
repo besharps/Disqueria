@@ -1,0 +1,16 @@
+p#lindo{text-align:center;
+	font-size:28;
+	font-weight:bold;
+	color:white;
+	font-style:italic;
+	background-color:#2E64D6;
+	border-top:solid;
+	border-width:thin;
+	border-color:red;}
+p.feo{text-align:left;
+	font-size:14;
+	color:red;
+	background-color: #CDDFF8;
+	border-bottom:solid;
+	border-width:thin;
+	border-color:gold;}

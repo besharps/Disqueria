@@ -1,0 +1,155 @@
+header{
+	background-color:#2E64D6;
+	padding:1px;
+}
+
+div.contenedor {
+			width:95%;
+			margin:auto;
+			background-color:#CDDFF8;
+			/*border:solid;
+			border-color:#2E64D6;
+			border-width:thin;*/
+}
+
+@media screen and (min-width: 769px){
+	div.columna{
+			width:50%;
+			background-color:transparent;
+			float:left;
+			text-align:center;
+			display:table;
+	}	
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+	div.columna{
+			width:50%;
+			background-color:transparent;
+			float:left;
+			text-align:center;
+			display:table;
+	}	
+}
+
+@media only screen and (max-width: 480px){
+	div.columna{
+			width:100%;
+			background-color:transparent;
+			text-align:center;
+			display:table;
+	}	
+}
+
+@media screen and (min-width: 769px){
+	div.tabla{
+			width:100%;
+			background-color:transparent;
+			float:left;
+			vertical-align:middle;
+			display:table;
+	}	
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+	div.tabla{
+			width:100%;
+			background-color:transparent;
+			float:left;
+			vertical-align:middle;
+			display:table;
+	}	
+}
+
+@media only screen and (max-width: 480px){
+	div.tabla{
+			width:100%;
+			background-color:transparent;
+			vertical-align:middle;
+			display:table;
+			
+	}	
+}
+
+div.interior {
+  			padding:5%;
+			margin:auto;
+  			overflow-y:auto;
+			vertical-align:middle;
+			display:table-cell;
+			table-layout:fixed;
+	}
+	
+div.anulafloat {
+	clear:both;
+
+}
+
+img {
+	max-width:40%;
+	max-height:40%;
+	text-align:center;
+	vertical-align:middle;
+}
+
+footer{
+	background-color:#2E64D6;
+	padding:1px;
+}
+
+h2{
+	color:#CDDFF8;
+	text-align:center;
+}
+
+h1{
+	color:#2E64D6;
+	text-align:center;
+}
+
+label{
+	color:#2E64D6;
+	text-align:center;
+	font-weight:bold;
+}
+
+p{
+	text-align:center;
+}
+
+p.pie{
+	color:#CDDFF8;
+	font-weight:bold;
+	text-align:center;
+}
+
+form{
+	text-align:center;
+}
+
+table{
+	width:80;
+	border:solid;
+	border-color:#2E64D6;
+	border-collapse:collapse;
+	border-width:thin;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+tr{
+	border-color:#2E64D6;
+}
+
+th{
+	background-color:#2E64D6;
+	color:#CDDFF8;
+	padding:5px;
+}
+
+td{
+	color:#2E64D6;
+	border:solid;
+	border-width:thin;
+	padding:5px;
+}
